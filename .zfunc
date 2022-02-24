@@ -1,0 +1,40 @@
+# Path to your terminal. Find by going to the terminal and typing 'pwd'
+terminal='/Users/colindelahunty/desktop/gamestonkterminal'
+
+function coetry {
+    if [ "$1" = "update" ]; then
+        poetry export -f requirements.txt  -o discordbot/requirements.txt --extras discord --without-hashes --dev
+        poetry export  -o requirements.txt --without-hashes
+        poetry export  -o requirements-full.txt --extras prediction --without-hashes --dev
+    elif [ "$1" = "revert" ]; then
+        git checkout origin/main -- poetry.lock
+        git checkout origin/main -- pyproject.toml
+        git checkout origin/main -- requirements.txt
+        git checkout origin/main -- requirements-full.txt
+        git checkout origin/main -- discordbot/requirements.txt
+    else
+        echo "Invalid argument, please pass update or revert"
+    fi
+}
+
+function ggg {
+    conda activate gst
+    cd "$terminal"
+    python terminal.py "$@"
+}
+
+function begin {
+    cd "$terminal"
+    conda activate gst
+    open -a "Terminal"
+    vim .
+}
+
+function update {
+    git fetch upstream
+    git merge upstream/main
+}
+
+function iu {
+    ssh cdelahun@bigred3.uits.iu.edu
+}
