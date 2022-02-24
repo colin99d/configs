@@ -10,6 +10,12 @@ These are the steps to use the .vimrc provided in this repository.
 1. Add the line `source ~/configs/.vimrc`
 1. Open vim and run `:PluginInstall`
 
+### You Complete Me
+You complete me takes additional configuration, please do the following:
+1. `pip install cmake`
+1. `cd ~/.vim/bundle/YouCompleteMe`
+1. `./install.py`
+
 ## zsh
 These are the steps to use the .zfunc provided in this repository.
 
