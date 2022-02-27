@@ -8,7 +8,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'nvie/vim-flake8'
 Plugin 'zxqfl/tabnine-vim'
 Plugin 'vim-airline/vim-airline'
