@@ -20,14 +20,11 @@ function coetry {
 function ggg {
     conda activate gst
     cd "$terminal"
-    python terminal.py "$@"
-}
-
-function begin {
-    cd "$terminal"
-    conda activate gst
-    open -a "Terminal"
-    vim .
+    if [ "$1" = "-r" ]; then
+    	python terminal.py
+    elif [ "$1" = "-c" ]; then
+	vim .
+    fi
 }
 
 function update {

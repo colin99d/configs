@@ -61,6 +61,13 @@ syntax on
 " setting up line numbering
 set nu
 
+" Ale settings
+let g:ale_fixers = {
+\       '*': ['remove_trailing_lines', 'trim_whitespace'],
+\       'python': ['black', 'isort'],
+\}
+nnoremap <Leader>F :ALEFix<CR>
+
 " jedi-vim setting
 autocmd FileType python setlocal completeopt-=preview
 let g:jedi#goto_command = "<leader>d"
