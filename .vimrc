@@ -74,10 +74,14 @@ let g:jedi#goto_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_stubs_command = "<leader>s"
 let g:jedi#goto_definitions_command = "<leader>]"
-let g:jedi#documentation_command = "K"
+let g:jedi#documentation_command = "<leader>K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 
 " Colin's special adds
 nnoremap <Leader>f :edit <c-r>=expand("%:h")<cr>/<CR>
+nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap J <PageDown>
+nnoremap K <PageUp>
+
