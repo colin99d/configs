@@ -16,6 +16,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'aquach/vim-http-client'
+Plugin 'tpope/vim-fugitive'
 
 
 call vundle#end()            " required
