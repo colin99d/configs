@@ -62,6 +62,10 @@ syntax on
 " setting up line numbering
 set nu
 
+" Gruvbox settings
+colorscheme gruvbox
+set bg=dark
+
 " Ale settings
 let g:ale_fixers = {
 \       '*': ['remove_trailing_lines', 'trim_whitespace'],
