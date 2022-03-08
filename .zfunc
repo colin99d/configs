@@ -37,5 +37,5 @@ function iu {
 }
 
 function dell {
-     ssh main@192.168.1.72
+     ssh main@108.86.128.101
 }
