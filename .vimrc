@@ -90,6 +90,7 @@ nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap J <PageDown>
 nnoremap K <PageUp>
 nnoremap <Leader>t :exec &nu==&rnu? "se nu!" : "se rnu!"<CR> 
+:au BufReadPost * exe "norm! g`\""
 
 " Improve file creation handling
 augroup Mkdir
