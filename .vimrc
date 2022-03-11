@@ -89,6 +89,7 @@ nnoremap <Leader>f :edit <c-r>=expand("%:h")<cr>/<CR>
 nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap J <PageDown>
 nnoremap K <PageUp>
+nnoremap <Leader>t :exec &nu==&rnu? "se nu!" : "se rnu!"<CR> 
 
 " Improve file creation handling
 augroup Mkdir
