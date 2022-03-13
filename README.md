@@ -21,3 +21,9 @@ These are the steps to use the .zfunc provided in this repository.
 
 1. `vim .zshrc`
 1. Add the line `source ~/configs/.zfunc`
+
+## Alacritty
+
+1. `brew install alacritty`
+2. vim ~/.alacritty.yml
+3. Paste the lines `import:` and then `- ~/configs/alacritty.yml`
