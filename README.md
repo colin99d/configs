@@ -3,7 +3,7 @@ Configuration files that I share between computers. To use these files clone thi
 1. `cd ~`
 1. `git clone https://github.com/colin99d/configs`
 
-## vim
+## Vim
 These are the steps to use the .vimrc provided in this repository.
 1. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 1. `vim ~/.vimrc`
@@ -16,7 +16,7 @@ You complete me takes additional configuration, please do the following:
 1. `cd ~/.vim/bundle/YouCompleteMe`
 1. `./install.py`
 
-## zsh
+## ZSH
 These are the steps to use the .zfunc provided in this repository.
 
 1. `vim .zshrc`
@@ -25,5 +25,11 @@ These are the steps to use the .zfunc provided in this repository.
 ## Alacritty
 
 1. `brew install alacritty`
-2. vim ~/.alacritty.yml
-3. Paste the lines `import:` and then `- ~/configs/alacritty.yml`
+1. vim ~/.alacritty.yml
+1. Paste the lines `import:` and then `- ~/configs/alacritty.yml`
+
+## Tmux
+
+1. `brew install tmux`
+1. vim `~/.tmux.conf`
+1. Paste the line `source ~/configs/tmux.conf`
