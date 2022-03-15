@@ -54,7 +54,6 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " setting up pyflakes
 
@@ -78,7 +77,7 @@ nnoremap <Leader>F :ALEFix<CR>
 " jedi-vim setting
 autocmd FileType python setlocal completeopt-=preview
 let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>G"
+let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_stubs_command = "<leader>s"
 let g:jedi#goto_definitions_command = "<leader>]"
 let g:jedi#documentation_command = "<leader>K"
