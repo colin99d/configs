@@ -16,6 +16,10 @@ You complete me takes additional configuration, please do the following:
 1. `cd ~/.vim/bundle/YouCompleteMe`
 1. `./install.py`
 
+### Silver Searcher
+Install Silver Search for the FZF Ag command to work
+1. `brew install the_silver_searcher`
+
 ## ZSH
 These are the steps to use the .zfunc provided in this repository.
 
