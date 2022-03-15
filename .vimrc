@@ -17,6 +17,8 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'aquach/vim-http-client'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 
 call vundle#end()            " required
@@ -76,7 +78,7 @@ nnoremap <Leader>F :ALEFix<CR>
 " jedi-vim setting
 autocmd FileType python setlocal completeopt-=preview
 let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_assignments_command = "<leader>G"
 let g:jedi#goto_stubs_command = "<leader>s"
 let g:jedi#goto_definitions_command = "<leader>]"
 let g:jedi#documentation_command = "<leader>K"
@@ -90,6 +92,7 @@ nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap J <PageDown>
 nnoremap K <PageUp>
 nnoremap <Leader>t :exec &nu==&rnu? "se nu!" : "se rnu!"<CR> 
+nnoremap <Leader>R :YcmRestartServer<CR>
 :au BufReadPost * exe "norm! g`\""
 
 " Improve file creation handling
