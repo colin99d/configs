@@ -70,7 +70,7 @@ set bg=dark
 " Ale settings
 let g:ale_fixers = {
 \       '*': ['remove_trailing_lines', 'trim_whitespace'],
-\       'python': ['black', 'isort'],
+\       'python': ['black'],
 \}
 nnoremap <Leader>F :ALEFix<CR>
 
@@ -93,6 +93,7 @@ nnoremap K <PageUp>
 nnoremap <Leader>t :exec &nu==&rnu? "se nu!" : "se rnu!"<CR> 
 nnoremap <Leader>R :YcmRestartServer<CR>
 :au BufReadPost * exe "norm! g`\""
+let g:netrw_banner = 0
 
 " Improve file creation handling
 augroup Mkdir
