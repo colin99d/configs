@@ -3,7 +3,7 @@ terminal='/Users/colindelahunty/desktop/gamestonkterminal'
 
 function coetry {
     if [ "$1" = "update" ]; then
-        poetry export -f requirements.txt  -o discordbot/requirements.txt --extras discord --without-hashes --dev
+        poetry export -f requirements.txt  -o bots/requirements.txt --extras bots --without-hashes --dev
         poetry export  -o requirements.txt --without-hashes
         poetry export  -o requirements-full.txt --extras prediction --without-hashes --dev
     elif [ "$1" = "revert" ]; then
