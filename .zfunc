@@ -11,7 +11,7 @@ function coetry {
         git checkout origin/main -- pyproject.toml
         git checkout origin/main -- requirements.txt
         git checkout origin/main -- requirements-full.txt
-        git checkout origin/main -- discordbot/requirements.txt
+        git checkout origin/main -- bots/requirements.txt
     else
         echo "Invalid argument, please pass update or revert"
     fi
