@@ -41,5 +41,5 @@ function dell {
 }
 
 function test {
-    echo "pytest tests --cov=. --cov-report html"
+    pytest tests --cov=. --cov-report html
 }
