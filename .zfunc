@@ -37,5 +37,9 @@ function iu {
 }
 
 function dell {
-     ssh main@108.86.128.101
+    ssh main@108.86.128.101
+}
+
+function test {
+    pytest tests --cov=. --cov-report html
 }
