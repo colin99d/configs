@@ -1,6 +1,7 @@
 # Path to your terminal. Find by going to the terminal and typing 'pwd'
 terminal='/Users/colindelahunty/desktop/gamestonkterminal'
 
+alias chrome="open -a 'Google Chrome'"
 function coetry {
     if [ "$1" = "update" ]; then
         poetry export -f requirements.txt  -o bots/requirements.txt --extras bots --without-hashes --dev
