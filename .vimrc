@@ -52,6 +52,7 @@ au BufNewFile, BufRead *.js, *.html, *.css
 
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 let g:ycm_autoclose_preview_window_after_completion=1
 
