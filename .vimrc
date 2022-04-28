@@ -22,6 +22,8 @@ call plug#begin()
 
 " All Plugins
 
+Plug 'zxqfl/tabnine-vim'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'dense-analysis/ale'
@@ -30,7 +32,6 @@ Plug 'zxqfl/tabnine-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'davidhalter/jedi-vim'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'aquach/vim-http-client'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
@@ -69,8 +70,6 @@ au BufNewFile, BufRead *.js, *.html, *.css
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-let g:ycm_autoclose_preview_window_after_completion=1
 
 " setting up pyflakes
 
