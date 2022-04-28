@@ -1,27 +1,43 @@
 set nocompatible              " required
 filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+call plug#begin()
 
 " All Plugins
 
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'dense-analysis/ale'
-Plugin 'nvie/vim-flake8'
-Plugin 'zxqfl/tabnine-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'aquach/vim-http-client'
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'dense-analysis/ale'
+Plug 'nvie/vim-flake8'
+Plug 'zxqfl/tabnine-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'davidhalter/jedi-vim'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'aquach/vim-http-client'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 
 " setting horizontal and vertical splits
