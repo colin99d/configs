@@ -1,47 +1,29 @@
 set nocompatible              " required
 filetype off                  " required
-
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
-" Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
-call plug#begin()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
 " All Plugins
 
-Plug 'zxqfl/tabnine-vim'
-Plug 'tabnine/YouCompleteMe'
-Plug 'morhetz/gruvbox'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'dense-analysis/ale'
-Plug 'nvie/vim-flake8'
-Plug 'zxqfl/tabnine-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'davidhalter/jedi-vim'
-Plug 'aquach/vim-http-client'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'dense-analysis/ale'
+Plugin 'nvie/vim-flake8'
+Plugin 'zxqfl/tabnine-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'aquach/vim-http-client'
+Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 
-call plug#end()            " required
+call vundle#end()            " required
 filetype plugin indent on    " required
 
-let g:jedi#force_py_version = 39
 " setting horizontal and vertical splits
 set splitbelow
 set splitright
@@ -71,6 +53,8 @@ au BufNewFile, BufRead *.js, *.html, *.css
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " setting up pyflakes
 

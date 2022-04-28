@@ -5,13 +5,15 @@ Configuration files that I share between computers. To use these files clone thi
 
 ## Vim
 These are the steps to use the .vimrc provided in this repository.
+1. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 1. `vim ~/.vimrc`
 1. Add the line `source ~/configs/.vimrc`
+1. Open vim and run `:PluginInstall`
 
 ### You Complete Me
 You complete me takes additional configuration, please do the following:
 1. `pip install cmake`
-1. `cd ~/.vim/plugged/YouCompleteMe`
+1. `cd ~/.vim/bundle/YouCompleteMe`
 1. `./install.py`
 
 ### Silver Searcher
