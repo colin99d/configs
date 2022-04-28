@@ -11,7 +11,7 @@ These are the steps to use the .vimrc provided in this repository.
 ### You Complete Me
 You complete me takes additional configuration, please do the following:
 1. `pip install cmake`
-1. `cd ~/.vim/bundle/YouCompleteMe`
+1. `cd ~/.vim/plugged/YouCompleteMe`
 1. `./install.py`
 
 ### Silver Searcher
