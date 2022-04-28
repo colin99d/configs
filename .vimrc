@@ -23,7 +23,7 @@ call plug#begin()
 " All Plugins
 
 Plug 'zxqfl/tabnine-vim'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'tabnine/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'dense-analysis/ale'
