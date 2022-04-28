@@ -41,6 +41,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()            " required
 filetype plugin indent on    " required
 
+let g:jedi#force_py_version = 39
 " setting horizontal and vertical splits
 set splitbelow
 set splitright
