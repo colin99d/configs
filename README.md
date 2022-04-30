@@ -37,3 +37,6 @@ These are the steps to use the .zfunc provided in this repository.
 1. `brew install tmux`
 1. vim `~/.tmux.conf`
 1. Paste the line `source ~/configs/tmux.conf`
+
+## Notes:
+If youcompleteme gives issues: https://github.com/ycm-core/YouCompleteMe/issues/4029
