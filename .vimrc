@@ -23,7 +23,6 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'dense-analysis/ale'
-Plug 'nvie/vim-flake8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'davidhalter/jedi-vim'
