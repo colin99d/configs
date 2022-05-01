@@ -45,3 +45,7 @@ function dell {
 function test {
     pytest tests --cov=. --cov-report html
 }
+
+function build {
+    docker-compose up -d --build
+} 
