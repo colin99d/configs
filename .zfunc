@@ -38,8 +38,12 @@ function iu {
     ssh cdelahun@bigred3.uits.iu.edu
 }
 
-function dell {
+function linux {
     ssh main@108.86.128.101
+}
+
+function windows {
+   ssh "Colin Delahunty"@192.168.1.94
 }
 
 function test {
