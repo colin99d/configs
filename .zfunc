@@ -53,3 +53,11 @@ function test {
 function build {
     docker-compose up -d --build
 } 
+
+function obb {
+    if [ "$1" = "dev" ]; then
+        eval "$(cat devopenbb.txt| grep ssh)"
+    else
+        echo "Invalid option selected"
+    fi
+}
