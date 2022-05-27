@@ -5,8 +5,7 @@ Configuration files that I share between computers. To use these files clone thi
 
 ## Vim
 These are the steps to use the .vimrc provided in this repository.
-1. `vim ~/.vimrc`
-1. Add the line `source ~/configs/.vimrc`
+1. `echo "source ~/configs/.vimrc" > ~/.vimrc`
 
 ### You Complete Me
 You complete me takes additional configuration, please do the following:
@@ -21,8 +20,7 @@ Install Silver Search for the FZF Ag command to work
 ## ZSH
 These are the steps to use the .zfunc provided in this repository.
 
-1. `vim .zshrc`
-1. Add the line `source ~/configs/.zfunc`
+1. `echo "source ~/configs/.zfunc" > ~/.zshrc`
 
 ## Alacritty
 
@@ -33,8 +31,7 @@ These are the steps to use the .zfunc provided in this repository.
 ## Tmux
 
 1. `brew install tmux`
-1. vim `~/.tmux.conf`
-1. Paste the line `source ~/configs/tmux.conf`
+1. `echo "source ~/configs/tmux.conf" > ~/.tmux.conf`
 
 ## Notes:
 If youcompleteme gives issues: https://github.com/ycm-core/YouCompleteMe/issues/4029
