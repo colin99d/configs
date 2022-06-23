@@ -31,6 +31,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'puremourning/vimspector'
+Plug 'chrisbra/csv.vim'
+Plug 'ervandew/supertab'
 
 call plug#end()
 

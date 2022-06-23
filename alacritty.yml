@@ -12,6 +12,9 @@ cursor:
   # Block Underline or Beam
   style: Block
 
+font:
+  size: 12
+
 # Colors (Hyper)
 colors:
   # Default colors
