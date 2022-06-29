@@ -21,7 +21,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin()
 
 Plug 'morhetz/gruvbox'
-" Plug 'vim-scripts/indentpython.vim'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'davidhalter/jedi-vim'
