@@ -66,3 +66,7 @@ function obb {
         echo "Invalid option selected"
     fi
 }
+
+function kexec {
+    kubectl exec --stdin --tty "$1" -- /bin/bash
+}
