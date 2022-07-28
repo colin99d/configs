@@ -2,7 +2,7 @@
 terminal='/Users/colindelahunty/desktop/OpenBBTerminal'
 
 alias chrome="open -a 'Google Chrome'"
-alias python='python3'
+# alias python='python3'
 
 function coetry {
     if [ "$1" = "update" ]; then
@@ -69,4 +69,12 @@ function obb {
 
 function kexec {
     kubectl exec --stdin --tty "$1" -- /bin/bash
+}
+
+function cocreate {
+    conda create --name "$1"
+}
+
+function codelete {
+    conda remove --name "$1" --all
 }
