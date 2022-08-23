@@ -6,7 +6,6 @@ alias chrome="open -a 'Google Chrome'"
 
 function coetry {
     if [ "$1" = "update" ]; then
-        poetry export -f requirements.txt  -o bots/requirements.txt --extras bots --without-hashes --dev
         poetry export  -o requirements.txt --without-hashes
         poetry export  -o requirements-full.txt --extras prediction --without-hashes --dev
     elif [ "$1" = "revert" ]; then
@@ -14,14 +13,18 @@ function coetry {
         git checkout origin/main -- pyproject.toml
         git checkout origin/main -- requirements.txt
         git checkout origin/main -- requirements-full.txt
-        git checkout origin/main -- bots/requirements.txt
     else
         echo "Invalid argument, please pass update or revert"
     fi
 }
 
+function revert {
+    git fetch origin
+    git reset --hard origin/main
+}
+
 function ggg {
-    conda activate gst
+    conda activate obb
     cd "$terminal"
     if [ "$1" = "-r" ]; then
     	python terminal.py
@@ -71,10 +74,18 @@ function kexec {
     kubectl exec --stdin --tty "$1" -- /bin/bash
 }
 
+function dexec {
+    docker exec -it "$1" /bin/sh
+}
+
 function cocreate {
     conda create --name "$1"
 }
 
 function codelete {
     conda remove --name "$1" --all
+}
+
+function envs {
+    export $(grep -v '^#' .env | xargs -0)
 }

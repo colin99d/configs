@@ -33,6 +33,8 @@ Plug 'puremourning/vimspector'
 Plug 'chrisbra/csv.vim'
 Plug 'ervandew/supertab'
 Plug 'sheerun/vim-polyglot'
+Plug 'rhysd/vim-clang-format'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -91,6 +93,8 @@ let g:ale_fixers = {
 \       'python': ['black'],
 \}
 nnoremap <Leader>F :ALEFix<CR>
+nnoremap <Leader>C :ClangFormat<CR>
+" :ClangFormatAutoEnable
 
 " jedi-vim setting
 autocmd FileType python setlocal completeopt-=preview
