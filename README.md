@@ -33,5 +33,9 @@ These are the steps to use the .zfunc provided in this repository.
 1. `brew install tmux`
 1. `echo "source ~/configs/tmux.conf" > ~/.tmux.conf`
 
+## Git
+
+1. After installing git run `git config --global init.defaultBranch 'main'`
+
 ## Notes:
 If youcompleteme gives issues: https://github.com/ycm-core/YouCompleteMe/issues/4029
