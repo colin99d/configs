@@ -1,5 +1,5 @@
 set nocompatible
-filetype off
+filetype plugin indent on
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -34,11 +34,9 @@ Plug 'ervandew/supertab'
 Plug 'sheerun/vim-polyglot'
 Plug 'rhysd/vim-clang-format'
 Plug 'jiangmiao/auto-pairs'
-Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-filetype plugin indent on
 
 " setting horizontal and vertical splits
 set splitbelow
