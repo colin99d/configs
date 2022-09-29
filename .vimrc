@@ -111,8 +111,8 @@ nnoremap <Leader>f :edit <c-r>=expand("%:h")<cr>/<CR>
 nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap J <PageDown>
 nnoremap K <PageUp>
-nnoremap <Leader>t :exec &nu==&rnu? "se nu!" : "se rnu!"<CR> 
-nnoremap <Leader>R :YcmRestartServer<CR>
+  nnoremap <Leader>t :exec &nu==&rnu? "se nu!" : "se rnu!"<CR> 
+  nnoremap <Leader>r :YcmRestartServer<CR>
 :au BufReadPost * exe "norm! g`\""
 let g:netrw_banner = 0
 
