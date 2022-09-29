@@ -29,12 +29,12 @@ Plug 'aquach/vim-http-client'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'puremourning/vimspector'
 Plug 'chrisbra/csv.vim'
 Plug 'ervandew/supertab'
 Plug 'sheerun/vim-polyglot'
 Plug 'rhysd/vim-clang-format'
 Plug 'jiangmiao/auto-pairs'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -94,6 +94,7 @@ let g:ale_fixers = {
 \}
 nnoremap <Leader>F :ALEFix<CR>
 nnoremap <Leader>C :ClangFormat<CR>
+nnoremap <Leader>R :RustFmt<CR>
 " :ClangFormatAutoEnable
 
 " jedi-vim setting
