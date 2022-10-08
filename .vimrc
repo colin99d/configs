@@ -1,5 +1,5 @@
-set nocompatible
-filetype plugin indent on
+" set nocompatible
+" filetype plugin indent on
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -39,9 +39,6 @@ call plug#end()
 " setting horizontal and vertical splits
 set splitbelow
 set splitright
-
-" fix pasting in tmux
-set copyindent
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -91,7 +88,6 @@ let g:ale_fixers = {
 nnoremap <Leader>F :ALEFix<CR>
 nnoremap <Leader>C :ClangFormat<CR>
 nnoremap <Leader>R :RustFmt<CR>
-" :ClangFormatAutoEnable
 
 " jedi-vim setting
 autocmd FileType python setlocal completeopt-=preview
@@ -109,9 +105,6 @@ nnoremap <Leader>f :edit <c-r>=expand("%:h")<cr>/<CR>
 nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap J <PageDown>
 nnoremap K <PageUp>
-  nnoremap <Leader>t :exec &nu==&rnu? "se nu!" : "se rnu!"<CR> 
-  nnoremap <Leader>r :YcmRestartServer<CR>
-:au BufReadPost * exe "norm! g`\""
 let g:netrw_banner = 0
 
 " Improve file creation handling
@@ -119,15 +112,3 @@ augroup Mkdir
   autocmd!
   autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
-
-nnoremap <Leader>dd :call vimspector#Launch()<CR>
-nnoremap <Leader>de :call vimspector#Reset()<CR>
-nnoremap <Leader>dc :call vimspector#Continue()<CR>
-
-nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
-
-nmap <Leader>dk <Plug>VimspectorRestart
-nmap <Leader>dh <Plug>VimspectorStepOut
-nmap <Leader>dl <Plug>VimspectorStepInto
-nmap <Leader>dj <Plug>VimspectorStepOver
