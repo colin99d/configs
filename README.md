@@ -5,7 +5,8 @@ Configuration files that I share between computers. To use these files clone thi
 
 ## Vim
 These are the steps to use the .vimrc provided in this repository.
-1. `echo "source ~/configs/.vimrc" > ~/.vimrc`
+1. `echo "source ~/configs/.vimrc" > ~/.config/nvim/init.vim`
+1. Run `pip install pynvim`
 
 ### You Complete Me
 You complete me takes additional configuration, please do the following:
