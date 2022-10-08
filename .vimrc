@@ -24,7 +24,6 @@ Plug 'morhetz/gruvbox'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'davidhalter/jedi-vim'
-" Plug 'ycm-core/YouCompleteMe'
 Plug 'aquach/vim-http-client'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
@@ -32,6 +31,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
