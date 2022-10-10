@@ -1,5 +1,5 @@
-" set nocompatible
-" filetype plugin indent on
+syntax on
+set nu
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -71,10 +71,6 @@ let g:ycm_autoclose_preview_window_after_completion=1
 " setting up pyflakes
 
 let python_highlight_all=1
-syntax on
-
-" setting up line numbering
-set nu
 
 " Gruvbox settings
 colorscheme gruvbox
