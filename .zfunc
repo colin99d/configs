@@ -89,3 +89,7 @@ function codelete {
 function envs {
     export $(grep -v '^#' .env | xargs -0)
 }
+
+function restart {
+    exec $SHELL
+}
