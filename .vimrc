@@ -1,5 +1,6 @@
 syntax on
-set nu
+set number relativenumber
+set nu rnu
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -20,7 +21,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin()
 
-Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'davidhalter/jedi-vim'
@@ -72,9 +73,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 
 let python_highlight_all=1
 
-" Gruvbox settings
-colorscheme gruvbox
-set bg=dark
+colorscheme tokyonight-night
 
 " Ale settings
 let g:ale_fixers = {
