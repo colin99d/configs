@@ -93,3 +93,7 @@ function envs {
 function restart {
     exec $SHELL
 }
+
+function pkill {
+    kill -9 $(lsof -i TCP:"$1" | grep LISTEN | awk '{print $2}')
+}
