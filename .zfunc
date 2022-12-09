@@ -101,3 +101,7 @@ function pkill {
 function notar {
     spctl -a -vvv -t install "$1"
 }
+
+function sign {
+     codesign -dv "$1"
+}
