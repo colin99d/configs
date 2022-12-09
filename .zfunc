@@ -43,7 +43,11 @@ function iu {
 }
 
 function linux {
-    ssh main@108.86.128.101
+    ssh main@192.168.1.72
+}
+
+function linux2 {
+    ssh colin@192.168.1.113
 }
 
 function windows {
