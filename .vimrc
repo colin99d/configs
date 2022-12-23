@@ -66,6 +66,8 @@ au BufNewFile, BufRead *.js, *.html, *.css, *.tsx, *.ts
     \ set softtabstop=2 |
     \ set shiftwidth=2
 
+autocmd BufNewFile,BufRead *.rs set filetype=rust
+
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -89,6 +91,7 @@ set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_completion_enabled = 1
 
 nnoremap <Leader>F :ALEFix<CR>
+nnoremap <Leader>D :ALEGoToDefinition<CR>
 nnoremap <Leader>C :ClangFormat<CR>
 nnoremap <Leader>S :Copilot setup<CR>
 
