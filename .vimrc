@@ -1,5 +1,4 @@
 syntax enable
-filetype plugin indent on
 set number relativenumber
 set nu rnu
 
@@ -36,10 +35,8 @@ Plug 'ervandew/supertab'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'github/copilot.vim'
-Plug 'rust-lang/rust.vim'
 
 call plug#end()
-
 
 " setting horizontal and vertical splits
 set splitbelow
@@ -52,7 +49,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Setting up indendation
-
 au BufNewFile, BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
@@ -72,10 +68,6 @@ autocmd BufNewFile,BufRead *.rs set filetype=rust
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" setting up pyflakes
 
 let python_highlight_all=1
 
