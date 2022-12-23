@@ -35,6 +35,7 @@ Plug 'ervandew/supertab'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'github/copilot.vim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -78,13 +79,18 @@ let python_highlight_all=1
 colorscheme tokyonight-night
 
 " Ale settings
+let g:ale_linters = { "python": ["ruff", "pylint"], "rust": ["analyzer"] }
 let g:ale_fixers = {
-\       '*': ['remove_trailing_lines', 'trim_whitespace'],
-\       'python': ['black'],
+\       "*": ["remove_trailing_lines", "trim_whitespace"],
+\       "python": ["black", "ruff"],
+\       "rust": ["rustfmt"],
 \}
+set completeopt=menu,menuone,preview,noselect,noinsert
+let g:ale_completion_enabled = 1
+
 nnoremap <Leader>F :ALEFix<CR>
 nnoremap <Leader>C :ClangFormat<CR>
-nnoremap <Leader>R :RustFmt<CR>
+nnoremap <Leader>S :Copilot setup<CR>
 
 " jedi-vim setting
 autocmd FileType python setlocal completeopt-=preview
@@ -97,7 +103,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 
-" Colin's special adds
+" Colin"s special adds
 nnoremap <Leader>f :edit <c-r>=expand("%:h")<cr>/<CR>
 nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap J <PageDown>
