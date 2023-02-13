@@ -82,8 +82,8 @@ let g:ale_fixers = {
 \}
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
 
-nnoremap <Leader>F :ALEFix<CR>
 nnoremap <Leader>D :ALEGoToDefinition<CR>
 nnoremap <Leader>C :ClangFormat<CR>
 nnoremap <Leader>S :Copilot setup<CR>
