@@ -7,7 +7,7 @@ source "$HOME/.cargo/env"
 function coetry {
     if [ "$1" = "update" ]; then
         poetry export -f requirements.txt -E optimization --without-hashes --output requirements.txt
-        poetry export -f requirements.txt --dev -E installer -E all --without-hashes --output requirements-full.txt
+        poetry export -f requirements.txt --with dev -E installer -E all --without-hashes --output requirements-full.txt
     elif [ "$1" = "revert" ]; then
         git checkout origin/main -- poetry.lock
         git checkout origin/main -- pyproject.toml
