@@ -20,7 +20,7 @@ function coetry {
 
 function revert {
     git fetch origin
-    git reset --hard origin/main
+    git reset --hard origin/develop
 }
 
 function ggg {
