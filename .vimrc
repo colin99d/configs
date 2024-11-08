@@ -34,7 +34,6 @@ Plug 'ervandew/supertab'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'github/copilot.vim'
-Plug 'duane9/nvim-rg'
 
 call plug#end()
 
