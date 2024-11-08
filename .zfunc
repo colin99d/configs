@@ -1,45 +1,14 @@
-# Path to your terminal. Find by going to the terminal and typing 'pwd'
-terminal='/Users/colindelahunty/desktop/OpenBBTerminal'
-
 alias chrome="open -a 'Google Chrome'"
 source "$HOME/.cargo/env"
-
-function coetry {
-    if [ "$1" = "update" ]; then
-        poetry export -f requirements.txt --without-hashes --output requirements.txt
-        poetry export -f requirements.txt --with dev -E installer -E all --without-hashes --output requirements-full.txt
-    elif [ "$1" = "revert" ]; then
-        git checkout origin/main -- poetry.lock
-        git checkout origin/main -- pyproject.toml
-        git checkout origin/main -- requirements.txt
-        git checkout origin/main -- requirements-full.txt
-    else
-        echo "Invalid argument, please pass update or revert"
-    fi
-}
 
 function revert {
     git fetch origin
     git reset --hard origin/develop
 }
 
-function ggg {
-    conda activate obb
-    cd "$terminal"
-    if [ "$1" = "-r" ]; then
-    	python terminal.py
-    elif [ "$1" = "-c" ]; then
-	vim .
-    fi
-}
-
 function update {
     git fetch upstream
     git merge upstream/main
-}
-
-function iu {
-    ssh cdelahun@bigred3.uits.iu.edu
 }
 
 function linux {
@@ -60,14 +29,6 @@ function test {
 
 function build {
     sudo docker-compose up -d --build
-}
-
-function obb {
-    if [ "$1" = "dev" ]; then
-        eval "$(cat ~/devopenbb.txt| grep ssh)"
-    else
-        echo "Invalid option selected"
-    fi
 }
 
 function kexec {
@@ -112,4 +73,11 @@ function pipsize {
 
 function wipebranches {
     git for-each-ref --format '%(refname:short)' refs/heads | grep -v "master\|main\|develop" | xargs git branch -D
+}
+
+function recreate_db {
+    make recreate-db
+    make seed-initial-fixtures
+    make create-dev-user email='colin.delahunty@invisible.email' first_name='Colin' last_name='Delahunty'
+    make create-dev-user email='dot@invisible.email' first_name='Dot' last_name='Bot'
 }
