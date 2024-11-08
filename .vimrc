@@ -74,10 +74,10 @@ let python_highlight_all=1
 colorscheme tokyonight-night
 
 " Ale settings
-let g:ale_linters = { "python": ["ruff", "pylint"], "rust": ["analyzer"] }
+let g:ale_linters = { "python": ["ruff"], "rust": ["analyzer"] }
 let g:ale_fixers = {
 \       "*": ["remove_trailing_lines", "trim_whitespace"],
-\       "python": ["black", "ruff"],
+\       "python": ["ruff"],
 \       "rust": ["rustfmt"],
 \}
 set completeopt=menu,menuone,preview,noselect,noinsert
@@ -111,17 +111,3 @@ augroup Mkdir
   autocmd!
   autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
-
-" Vimspector settings
-let g:vimspector_enable_mappings = 'HUMAN'
-nnoremap <Leader>dd :call vimspector#Launch()<CR>
-nnoremap <Leader>de :call vimspector#Reset()<CR>
-nnoremap <Leader>dc :call vimspector#Continue()<CR>
-
-nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
-
-nmap <Leader>dk <Plug>VimspectorRestart
-nmap <Leader>dh <Plug>VimspectorStepOut
-nmap <Leader>dl <Plug>VimspectorStepInto
-nmap <Leader>dj <Plug>VimspectorStepOver
