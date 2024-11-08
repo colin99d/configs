@@ -34,7 +34,7 @@ Plug 'ervandew/supertab'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'github/copilot.vim'
-Plug 'puremourning/vimspector'
+Plug 'duane9/nvim-rg'
 
 call plug#end()
 
@@ -74,7 +74,7 @@ let python_highlight_all=1
 colorscheme tokyonight-night
 
 " Ale settings
-let g:ale_linters = { "python": ["ruff"], "rust": ["analyzer"] }
+let g:ale_linters = { "python": ["ruff"], "rust": ["analyzer"], 'typescript': ['tsserver'], 'typescriptreact': ['tsserver'], }
 let g:ale_fixers = {
 \       "*": ["remove_trailing_lines", "trim_whitespace"],
 \       "python": ["ruff"],
@@ -83,6 +83,7 @@ let g:ale_fixers = {
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
+let g:ale_typecript_tsserver_use_global_binary = 1
 
 nnoremap <Leader>D :ALEGoToDefinition<CR>
 nnoremap <Leader>C :ClangFormat<CR>
@@ -98,6 +99,19 @@ let g:jedi#documentation_command = "<leader>K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
+
+" Typescript settings
+autocmd FileType typescript,typescriptreact setlocal completeopt-=preview
+let g:ale#goto_definition_command = "<leader>d"
+nmap <leader>d <Plug>(ale_go_to_definition)
+let g:ale#goto_assignments_command = "<leader>g"
+nmap <leader>g <Plug>(ale_go_to_type_definition)
+let g:ale#documentation_command = "<leader>K"
+nmap <leader>K <Plug>(ale_hover)
+let g:ale#usages_command = "<leader>n"
+nmap <leader>n <Plug>(ale_find_references)
+let g:ale#rename_command = "<leader>r"
+nmap <leader>r <Plug>(ale_rename)
 
 " Colin"s special adds
 nnoremap <Leader>f :edit <c-r>=expand("%:h")<cr>/<CR>
