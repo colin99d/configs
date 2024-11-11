@@ -76,8 +76,8 @@ function wipebranches {
 }
 
 function recreate_db {
-    make recreate-db
-    make seed-initial-fixtures
-    make create-dev-user email='colin.delahunty@invisible.email' first_name='Colin' last_name='Delahunty'
-    make create-dev-user email='dot@invisible.email' first_name='Dot' last_name='Bot'
+    make recreate-db || return 1
+    make seed-initial-fixtures || return 1
+    make create-dev-user email='colin.delahunty@invisible.email' first_name='Colin' last_name='Delahunty' || return 1
+    make create-dev-user email='dot@invisible.email' first_name='Dot' last_name='Bot' || return 1
 }

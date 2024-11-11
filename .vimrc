@@ -78,6 +78,7 @@ let g:ale_fixers = {
 \       "*": ["remove_trailing_lines", "trim_whitespace"],
 \       "python": ["ruff"],
 \       "rust": ["rustfmt"],
+\       "typescript": ["prettier", "eslint"],
 \}
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_completion_enabled = 1
